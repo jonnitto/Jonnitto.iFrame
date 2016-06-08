@@ -1,0 +1,28 @@
+{
+    "name": "jonnitto/iframe",
+    "type": "typo3-flow-plugin",
+    "description": "iFrames for Neos CMS",
+    "version": "0.0.1",
+    "license": "MIT",
+    "keywords": ["flow", "neos", "iframe", "contentelement"],
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://twitter.com/jonnitto",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Jonnitto\\iFrame": "Classes"
+        }
+    },
+    "extra": {
+        "marketplace-account": "me@jonnitto.ch",
+        "installer-name": "Jonnitto.iFrame",
+        "neos": {
+            "package-key": "Jonnitto.iFrame"
+        }
+    }
+}

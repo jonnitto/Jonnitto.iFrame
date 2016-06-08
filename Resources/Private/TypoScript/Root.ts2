@@ -1,0 +1,38 @@
+prototype(Jonnitto.iFrame:iFrame) {
+	configuration = ${Configuration.setting('Jonnitto.iFrame')}
+	@context.configuration = ${this.configuration}
+	@context.height = ${q(node).property('height') ? q(node).property('height') : this.configuration.defaultHeight}
+	@context.ratio = ${q(node).property('ratio')}
+
+	attributes {
+		style = TYPO3.TypoScript:RawArray {
+			position = 'position:relative;'
+			width = ${'width:' + configuration.width + ';'}
+			height = TYPO3.TypoScript:Case {
+				hasRatio {
+					condition = ${ratio}
+					renderer = ${'padding-top:' + ratio + '%;height:0;'}
+				}
+				default {
+					condition = true
+					renderer = ${'height:' + height + q(node).property('unit') + ';'}
+				}
+			}
+		}
+	}
+
+	iframe = TYPO3.TypoScript:Tag {
+		tagName = 'iframe'
+		attributes {
+			allowtransparency = 'true'
+			style = TYPO3.TypoScript:RawArray {
+				default = ${configuration.defaultStyle}
+				position = ${configuration.positionStyle}
+			}
+			src = ${q(node).property('link')}
+			src.@process.convertUris = TYPO3.Neos:ConvertUris {
+				forceConversion = true
+			}
+		}
+	}
+}
