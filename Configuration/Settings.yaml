@@ -2,7 +2,7 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Jonnitto.iFrame': TRUE
+        'Jonnitto.iFrame': true
     userInterface:
       translation:
         autoInclude:
