@@ -1,3 +1,5 @@
+namespace: Fusion = TYPO3.TypoScript
+
 prototype(Jonnitto.iFrame:iFrame) {
 	configuration = ${Configuration.setting('Jonnitto.iFrame')}
 	@context.configuration = ${this.configuration}
@@ -5,10 +7,10 @@ prototype(Jonnitto.iFrame:iFrame) {
 	@context.ratio = ${q(node).property('ratio')}
 
 	attributes {
-		style = TYPO3.TypoScript:RawArray {
+		style = Fusion:RawArray {
 			position = 'position:relative;'
 			width = ${'width:' + configuration.width + ';'}
-			height = TYPO3.TypoScript:Case {
+			height = Fusion:Case {
 				hasRatio {
 					condition = ${ratio}
 					renderer = ${'padding-top:' + ratio + '%;height:0;'}
@@ -21,16 +23,16 @@ prototype(Jonnitto.iFrame:iFrame) {
 		}
 	}
 
-	iframe = TYPO3.TypoScript:Tag {
+	iframe = Fusion:Tag {
 		tagName = 'iframe'
 		attributes {
 			allowtransparency = 'true'
-			style = TYPO3.TypoScript:RawArray {
+			style = Fusion:RawArray {
 				default = ${configuration.defaultStyle}
 				position = ${configuration.positionStyle}
 			}
 			src = ${q(node).property('link')}
-			src.@process.convertUris = TYPO3.Neos:ConvertUris {
+			src.@process.convertUris = ConvertUris {
 				forceConversion = true
 			}
 		}
