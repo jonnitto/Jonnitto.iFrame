@@ -1,10 +1,12 @@
-namespace: Fusion = TYPO3.TypoScript
+namespace: Fusion = Neos.Fusion
 
 prototype(Jonnitto.iFrame:iFrame) {
 	configuration = ${Configuration.setting('Jonnitto.iFrame')}
-	@context.configuration = ${this.configuration}
-	@context.height = ${q(node).property('height') ? q(node).property('height') : this.configuration.defaultHeight}
-	@context.ratio = ${q(node).property('ratio')}
+	@context {
+		configuration = ${this.configuration}
+		height = ${q(node).property('height') ? q(node).property('height') : this.configuration.defaultHeight}
+		ratio = ${q(node).property('ratio')}
+	}
 
 	attributes {
 		style = Fusion:RawArray {

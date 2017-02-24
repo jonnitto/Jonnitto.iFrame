@@ -1,8 +1,7 @@
 {
     "name": "jonnitto/iframe",
-    "type": "typo3-flow-plugin",
+    "type": "neos-plugin",
     "description": "iFrames for Neos CMS",
-    "version": "0.1.0",
     "license": "MIT",
     "keywords": ["flow", "neos", "iframe", "contentelement"],
     "authors": [
@@ -13,9 +12,12 @@
             "role": "Developer"
         }
     ],
+    "require": {
+        "typo3/neos": "3.*"
+    },
     "autoload": {
-        "psr-0": {
-            "Jonnitto\\iFrame": "Classes"
+        "psr-4": {
+            "Jonnitto\\iFrame\\": "Classes"
         }
     },
     "extra": {
