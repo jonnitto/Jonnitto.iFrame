@@ -4,6 +4,7 @@
   ui:
     label: i18n
     icon: icon-share-square
+    position: 2000
     inspector:
       groups:
         settings:
