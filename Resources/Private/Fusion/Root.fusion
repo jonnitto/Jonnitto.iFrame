@@ -1,6 +1,8 @@
 namespace: Fusion = Neos.Fusion
 
 prototype(Jonnitto.iFrame:iFrame) {
+	templatePath = 'resource://Jonnitto.iFrame/Private/Templates/NodeTypes/iFrame.html'
+
 	configuration = ${Configuration.setting('Jonnitto.iFrame')}
 	@context {
 		configuration = ${this.configuration}
