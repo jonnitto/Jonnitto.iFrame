@@ -11,6 +11,11 @@ prototype(Jonnitto.iFrame:iFrame) {
 	}
 
 	attributes {
+		class = Fusion:RawArray {
+			@process.nodeType >
+			nodeType = 'jonnitto-iframe'
+			container = ${configuration.container}
+		}
 		style = Fusion:RawArray {
 			position = 'position:relative;'
 			width = ${'width:' + configuration.width + ';'}
