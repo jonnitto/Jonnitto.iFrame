@@ -9,7 +9,7 @@
                 <source>Settings</source>
             </trans-unit>
             <trans-unit id="properties.link" xml:space="preserve">
-                <source>Link</source>
+                <source>Internal or external URL</source>
             </trans-unit>
             <trans-unit id="properties.height" xml:space="preserve">
                 <source>Height</source>
@@ -25,6 +25,9 @@
             </trans-unit>
             <trans-unit id="properties.ratio" xml:space="preserve">
                 <source>Ratio</source>
+            </trans-unit>
+            <trans-unit id="noSrc" xml:space="preserve">
+              <source>Please add a internal or external URL in the inspector</source>
             </trans-unit>
         </body>
     </file>

@@ -9,7 +9,7 @@
                 <source>Einstellungen</source>
             </trans-unit>
             <trans-unit id="properties.link" xml:space="preserve">
-                <source>Link</source>
+                <source>Interne oder externe Seite</source>
             </trans-unit>
             <trans-unit id="properties.height" xml:space="preserve">
                 <source>Höhe</source>
@@ -25,6 +25,9 @@
             </trans-unit>
             <trans-unit id="properties.ratio" xml:space="preserve">
                 <source>Seitenverhältnis</source>
+            </trans-unit>
+            <trans-unit id="noSrc" xml:space="preserve">
+              <source>Bitte fügen Sie eine interne oder externe Seite im Inspektor hinzu</source>
             </trans-unit>
         </body>
     </file>
