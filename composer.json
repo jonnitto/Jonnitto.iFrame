@@ -20,6 +20,9 @@
             "Jonnitto\\iFrame\\": "Classes"
         }
     },
+    "archive": {
+        "exclude": [".editorconfig", ".github", ".gitattributes", "CODE_OF_CONDUCT.md"]
+    },
     "extra": {
         "marketplace-account": "me@jonnitto.ch",
         "installer-name": "Jonnitto.iFrame",

@@ -1,49 +1,57 @@
-namespace: Fusion = Neos.Fusion
+prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Fusion:Tag) {
+    configuration = ${Configuration.setting('Jonnitto.iFrame')}
+    height = ${q(node).property('height')}
+    unit = ${q(node).property('unit')}
+    ratio = ${q(node).property('ratio')}
+    src = ${q(node).property('link')}
 
-prototype(Jonnitto.iFrame:iFrame) {
-	templatePath = 'resource://Jonnitto.iFrame/Private/Templates/NodeTypes/iFrame.html'
+    @context {
+        configuration = ${this.configuration}
+        height = ${this.height ? this.height : this.configuration.defaultHeight}
+        unit = ${this.unit}
+        ratio = ${this.ratio}
+        src = ${this.src}
+    }
 
-	configuration = ${Configuration.setting('Jonnitto.iFrame')}
-	@context {
-		configuration = ${this.configuration}
-		height = ${q(node).property('height') ? q(node).property('height') : this.configuration.defaultHeight}
-		ratio = ${q(node).property('ratio')}
-	}
+    attributes {
+        class = Neos.Fusion:RawArray {
+            nodeType = 'jonnitto-iframe'
+            container = ${configuration.container}
+        }
+        style = Neos.Fusion:Array {
+            position = 'position:relative;'
+            width = ${'width:' + configuration.width + ';'}
+            height = Neos.Fusion:Case {
+                hasRatio {
+                    condition = ${ratio}
+                    renderer = ${'padding-top:' + ratio + '%;height:0;'}
+                }
+                default {
+                    condition = true
+                    renderer = ${'height:' + height + unit + ';'}
+                }
+            }
+        }
+    }
 
-	attributes {
-		class = Fusion:RawArray {
-			@process.nodeType >
-			nodeType = 'jonnitto-iframe'
-			container = ${configuration.container}
-		}
-		style = Fusion:RawArray {
-			position = 'position:relative;'
-			width = ${'width:' + configuration.width + ';'}
-			height = Fusion:Case {
-				hasRatio {
-					condition = ${ratio}
-					renderer = ${'padding-top:' + ratio + '%;height:0;'}
-				}
-				default {
-					condition = true
-					renderer = ${'height:' + height + q(node).property('unit') + ';'}
-				}
-			}
-		}
-	}
+    content = Neos.Fusion:Tag {
+        tagName = 'iframe'
+        attributes {
+            allowtransparency = 'true'
+            style = Neos.Fusion:Array {
+                default = ${configuration.defaultStyle}
+                position = ${configuration.positionStyle}
+            }
+            src = ${src}
+            src.@process.convertUris = ConvertUris {
+                forceConversion = true
+            }
+        }
+    }
 
-	iframe = Fusion:Tag {
-		tagName = 'iframe'
-		attributes {
-			allowtransparency = 'true'
-			style = Fusion:RawArray {
-				default = ${configuration.defaultStyle}
-				position = ${configuration.positionStyle}
-			}
-			src = ${q(node).property('link')}
-			src.@process.convertUris = ConvertUris {
-				forceConversion = true
-			}
-		}
-	}
+    @process.contentElementWrapping {
+        expression = Neos.Neos:ContentElementWrapping
+        @position = 'end 999999999'
+    }
+    @exceptionHandler = 'Neos\\Neos\\Fusion\\ExceptionHandlers\\NodeWrappingHandler'
 }
