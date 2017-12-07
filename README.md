@@ -1,9 +1,14 @@
-Jonnitto.iFrame
-===============
-
 [![Latest Stable Version](https://poser.pugx.org/jonnitto/iframe/v/stable)](https://packagist.org/packages/jonnitto/iframe)
 [![Total Downloads](https://poser.pugx.org/jonnitto/iframe/downloads)](https://packagist.org/packages/jonnitto/iframe)
 [![License](https://poser.pugx.org/jonnitto/iframe/license)](https://packagist.org/packages/jonnitto/iframe)
+[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.iFrame.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.iFrame/fork)
+[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.iFrame.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.iFrame/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.iFrame.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.iFrame/subscription)
+[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
+[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+
+Jonnitto.iFrame
+===============
 
 iFrame for [Neos CMS](https://www.neos.io):
 
