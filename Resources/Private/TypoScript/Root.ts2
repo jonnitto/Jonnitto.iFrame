@@ -1,4 +1,4 @@
-prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Fusion:Tag) {
+prototype(Jonnitto.iFrame:iFrame) < prototype(TYPO3.TypoScript:Tag) {
     configuration = ${Configuration.setting('Jonnitto.iFrame')}
     height = ${q(node).property('height')}
     unit = ${q(node).property('unit')}
@@ -16,14 +16,14 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Fusion:Tag) {
     }
 
     attributes {
-        class = Neos.Fusion:RawArray {
+        class = TYPO3.TypoScript:RawArray {
             nodeType = 'jonnitto-iframe'
             container = ${configuration.container}
         }
-        style = Neos.Fusion:Array {
+        style = TYPO3.TypoScript:Array {
             position = 'position:relative;'
             width = ${'width:' + configuration.width + ';'}
-            height = Neos.Fusion:Case {
+            height = TYPO3.TypoScript:Case {
                 hasRatio {
                     condition = ${ratio}
                     renderer = ${'padding-top:' + ratio + '%;height:0;'}
@@ -36,19 +36,19 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Fusion:Tag) {
         }
     }
 
-    content = Neos.Fusion:Case {
+    content = TYPO3.TypoScript:Case {
         hasSrc {
             condition = ${src ? true : false}
-            renderer = Neos.Fusion:Tag {
+            renderer = TYPO3.TypoScript:Tag {
                 tagName = 'iframe'
                 attributes {
                     allowtransparency = 'true'
-                    style = Neos.Fusion:Array {
+                    style = TYPO3.TypoScript:Array {
                         default = ${configuration.defaultStyle}
                         position = ${configuration.positionStyle}
                     }
                     src = ${src}
-                    src.@process.convertUris = Neos.Neos:ConvertUris {
+                    src.@process.convertUris = TYPO3.Neos:ConvertUris {
                         forceConversion = true
                     }
                 }
@@ -65,8 +65,9 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Fusion:Tag) {
 
 
     @process.contentElementWrapping {
-        expression = Neos.Neos:ContentElementWrapping
+        expression = TYPO3.Neos:ContentElementWrapping
         @position = 'end 999999999'
     }
-    @exceptionHandler = 'Neos\\Neos\\Fusion\\ExceptionHandlers\\NodeWrappingHandler'
+
+    @exceptionHandler = 'TYPO3\\Neos\\TypoScript\\ExceptionHandlers\\NodeWrappingHandler'
 }

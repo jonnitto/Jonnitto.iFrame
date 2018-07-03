@@ -1,12 +1,12 @@
-Neos:
+TYPO3:
   Neos:
-    fusion:
+    typoScript:
       autoInclude:
-        Jonnitto.iFrame: true
+        'Jonnitto.iFrame': true
     userInterface:
       translation:
         autoInclude:
-          Jonnitto.iFrame:
+          'Jonnitto.iFrame':
             - 'NodeTypes/*'
 
 Jonnitto:

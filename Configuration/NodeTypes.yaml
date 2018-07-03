@@ -1,6 +1,6 @@
 'Jonnitto.iFrame:iFrame':
   superTypes:
-    'Neos.Neos:Content': true
+    'TYPO3.Neos:Content': true
   ui:
     label: i18n
     icon: icon-share-square
@@ -18,7 +18,7 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
           group: settings
           position: 100
     height:
@@ -30,7 +30,7 @@
           group: settings
           position: 200
       validation:
-        'Neos.Neos/Validation/IntegerValidator': []
+        'TYPO3.Neos/Validation/IntegerValidator': []
     unit:
       type: string
       defaultValue: px
@@ -39,7 +39,7 @@
         reloadIfChanged: true
         inspector:
           group: settings
-          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           position: 300
           editorOptions:
             values:
@@ -54,7 +54,7 @@
         reloadIfChanged: true
         inspector:
           group: settings
-          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           position: 300
           editorOptions:
             allowEmpty: true

@@ -3,7 +3,12 @@
     "type": "neos-plugin",
     "description": "iFrames for Neos CMS",
     "license": "MIT",
-    "keywords": ["flow", "neos", "iframe", "contentelement"],
+    "keywords": [
+        "flow",
+        "neos",
+        "iframe",
+        "contentelement"
+    ],
     "authors": [
         {
             "name": "Jon Uhlmann",
@@ -13,8 +18,8 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.0 || ~4.0",
-        "carbon/notification": "^1.2"
+        "neos/neos": "~2.0",
+        "carbon/notification": "^0.1"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +27,12 @@
         }
     },
     "archive": {
-        "exclude": [".editorconfig", ".github", ".gitattributes", "CODE_OF_CONDUCT.md"]
+        "exclude": [
+            ".editorconfig",
+            ".github",
+            ".gitattributes",
+            "CODE_OF_CONDUCT.md"
+        ]
     },
     "extra": {
         "marketplace-account": "me@jonnitto.ch",
