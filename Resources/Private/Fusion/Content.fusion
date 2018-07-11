@@ -1,0 +1,26 @@
+prototype(Jonnitto.iFrame:Content) < prototype(Neos.Fusion:Case) {
+    hasSrc {
+        condition = ${src ? true : false}
+        renderer = Neos.Fusion:Tag {
+            tagName = 'iframe'
+            attributes {
+                allowtransparency = 'true'
+                style = Neos.Fusion:Array {
+                    default = ${configuration.defaultStyle}
+                    position = ${configuration.positionStyle}
+                }
+                src = ${src}
+                src.@process.convertUris = Neos.Neos:ConvertUris {
+                    forceConversion = true
+                }
+            }
+        }
+    }
+    inBackend {
+        condition = ${node.context.inBackend}
+        renderer = Carbon.Notification:Tag {
+            type = 'alert'
+            content = ${Translation.translate('noSrc', null, [], 'NodeTypes/iFrame', 'Jonnitto.iFrame')}
+        }
+    }
+}

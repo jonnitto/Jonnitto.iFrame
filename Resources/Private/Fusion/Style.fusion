@@ -1,0 +1,14 @@
+prototype(Jonnitto.iFrame:Style) < prototype(Neos.Fusion:Array) {
+    position = 'position:relative;'
+    width = ${'width:' + configuration.width + ';'}
+    height = Neos.Fusion:Case {
+        hasRatio {
+            condition = ${ratio}
+            renderer = ${'padding-top:' + ratio + '%;height:0;'}
+        }
+        default {
+            condition = true
+            renderer = ${'height:' + height + unit + ';'}
+        }
+    }
+}
