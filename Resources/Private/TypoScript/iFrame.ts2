@@ -28,7 +28,7 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(TYPO3.TypoScript:Tag) {
     content = Jonnitto.iFrame:Content {
         @process.addContainer = TYPO3.TypoScript:Tag {
             @if.hasContainer = ${configuration.container ? true : false}
-            style = Jonnitto.iFrame:Style
+            attributes.style = Jonnitto.iFrame:Style
             content = ${value}
         }
     }
