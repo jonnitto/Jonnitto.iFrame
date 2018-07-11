@@ -1,0 +1,26 @@
+prototype(Jonnitto.iFrame:Content) < prototype(TYPO3.TypoScript:Case) {
+    hasSrc {
+        condition = ${src ? true : false}
+        renderer = TYPO3.TypoScript:Tag {
+            tagName = 'iframe'
+            attributes {
+                allowtransparency = 'true'
+                style = TYPO3.TypoScript:Array {
+                    default = ${configuration.defaultStyle}
+                    position = ${configuration.positionStyle}
+                }
+                src = ${src}
+                src.@process.convertUris = TYPO3.Neos:ConvertUris {
+                    forceConversion = true
+                }
+            }
+        }
+    }
+    inBackend {
+        condition = ${node.context.inBackend}
+        renderer = Carbon.Notification:Tag {
+            type = 'alert'
+            content = ${Translation.translate('noSrc', null, [], 'NodeTypes/iFrame', 'Jonnitto.iFrame')}
+        }
+    }
+}

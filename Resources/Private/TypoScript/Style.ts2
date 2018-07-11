@@ -1,0 +1,14 @@
+prototype(Jonnitto.iFrame:Style) < prototype(TYPO3.TypoScript:Array) {
+    position = 'position:relative;'
+    width = ${'width:' + configuration.width + ';'}
+    height = TYPO3.TypoScript:Case {
+        hasRatio {
+            condition = ${ratio}
+            renderer = ${'padding-top:' + ratio + '%;height:0;'}
+        }
+        default {
+            condition = true
+            renderer = ${'height:' + height + unit + ';'}
+        }
+    }
+}

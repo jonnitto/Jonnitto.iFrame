@@ -1,0 +1,42 @@
+prototype(Jonnitto.iFrame:iFrame) < prototype(TYPO3.TypoScript:Tag) {
+    configuration = ${Configuration.setting('Jonnitto.iFrame')}
+    height = ${q(node).property('height')}
+    unit = ${q(node).property('unit')}
+    ratio = ${q(node).property('ratio')}
+    src = ${q(node).property('link')}
+
+    @if.render = ${this.src || node.context.inBackend}
+
+    @context {
+        configuration = ${this.configuration}
+        height = ${this.height ? this.height : this.configuration.defaultHeight}
+        unit = ${this.unit}
+        ratio = ${this.ratio}
+        src = ${this.src}
+    }
+
+    attributes {
+        class = TYPO3.TypoScript:RawArray {
+            nodeType = 'jonnitto-iframe'
+            container = ${configuration.container}
+        }
+        style = Jonnitto.iFrame:Style {
+            @if.hasNoContainer = ${configuration.container ? false : true}
+        }
+    }
+
+    content = Jonnitto.iFrame:Content {
+        @process.addContainer = TYPO3.TypoScript:Tag {
+            @if.hasContainer = ${configuration.container ? true : false}
+            style = Jonnitto.iFrame:Style
+            content = ${value}
+        }
+    }
+
+    @process.contentElementWrapping {
+        expression = TYPO3.Neos:ContentElementWrapping
+        @position = 'end 999999999'
+    }
+
+    @exceptionHandler = 'TYPO3\\Neos\\TypoScript\\ExceptionHandlers\\NodeWrappingHandler'
+}
