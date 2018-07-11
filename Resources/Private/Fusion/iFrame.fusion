@@ -28,7 +28,7 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Fusion:Tag) {
     content = Jonnitto.iFrame:Content {
         @process.addContainer = Neos.Fusion:Tag {
             @if.hasContainer = ${configuration.container ? true : false}
-            style = Jonnitto.iFrame:Style
+            attributes.style = Jonnitto.iFrame:Style
             content = ${value}
         }
     }
