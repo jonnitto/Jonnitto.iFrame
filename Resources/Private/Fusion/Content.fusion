@@ -20,6 +20,7 @@ prototype(Jonnitto.iFrame:Content) < prototype(Neos.Fusion:Case) {
         condition = ${node.context.inBackend}
         renderer = Carbon.Notification:Tag {
             type = 'alert'
+            attributes.style.position = 'position:absolute;left:0;right:0;top:0;'
             content = ${Translation.translate('noSrc', null, [], 'NodeTypes/iFrame', 'Jonnitto.iFrame')}
         }
     }
