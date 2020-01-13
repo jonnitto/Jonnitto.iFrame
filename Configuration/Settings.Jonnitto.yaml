@@ -1,6 +1,6 @@
 Jonnitto:
   iFrame:
-    container: false
+    container: true
     defaultUnit: px
     defaultHeight:
       px: 400px
