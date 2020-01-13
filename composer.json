@@ -2,7 +2,7 @@
     "name": "jonnitto/iframe",
     "type": "neos-plugin",
     "description": "iFrames for Neos CMS",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "keywords": ["flow", "neos", "iframe", "contentelement"],
     "authors": [
         {
