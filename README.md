@@ -11,7 +11,8 @@
 
 iFrame for [Neos CMS](https://www.neos.io):
 
-*   You can set the height (Pixel or viewport height) or the ratio of the iFrame.
+*   You can set the height (Pixel or viewport height) or the ratio of the iframe.
+*   If the source of the iframe returns an error, it will be removed in the frontend.
 
 ## Installation
 
