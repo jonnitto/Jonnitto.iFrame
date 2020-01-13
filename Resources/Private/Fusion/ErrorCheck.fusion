@@ -1,0 +1,3 @@
+prototype(Jonnitto.iFrame:ErrorCheck) < prototype(Carbon.IncludeAssets:Case) {
+    mixin = 'Jonnitto.iFrame:Mixin.ErrorCheck'
+}

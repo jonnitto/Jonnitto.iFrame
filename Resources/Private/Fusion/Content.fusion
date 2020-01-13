@@ -4,6 +4,7 @@ prototype(Jonnitto.iFrame:Content) < prototype(Neos.Fusion:Case) {
         renderer = Neos.Fusion:Tag {
             tagName = 'iframe'
             attributes {
+                onload =${node.context.inBackend ? null : 'jonnittoIframeCheck(this)'}
                 allowtransparency = 'true'
                 style = Neos.Fusion:Array {
                     default = ${configuration.defaultStyle}
