@@ -1,0 +1,10 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Jonnitto.iFrame: true
+    userInterface:
+      translation:
+        autoInclude:
+          Jonnitto.iFrame:
+            - 'NodeTypes/*'

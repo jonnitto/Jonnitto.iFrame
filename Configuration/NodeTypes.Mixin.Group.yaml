@@ -1,0 +1,9 @@
+'Jonnitto.iFrame:Mixin.Group':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        settings:
+          label: i18n
+          position: 20
+          icon: icon-share-square

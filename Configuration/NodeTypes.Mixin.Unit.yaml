@@ -1,0 +1,21 @@
+'Jonnitto.iFrame:Mixin.Unit':
+  abstract: true
+  properties:
+    unit:
+      type: string
+      defaultValue: px
+      ui:
+        label: i18n
+        showInCreationDialog: true
+        reloadIfChanged: true
+        inspector:
+          hidden: 'ClientEval:node.properties.ratio ? true : false'
+          group: settings
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          position: 300
+          editorOptions:
+            values:
+              px:
+                label: i18n
+              vh:
+                label: i18n

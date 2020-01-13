@@ -1,0 +1,7 @@
+Jonnitto:
+  iFrame:
+    container: false
+    defaultUnit: px
+    defaultHeight:
+      px: 400px
+      vh: 100vh

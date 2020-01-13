@@ -3,7 +3,12 @@
     "type": "neos-plugin",
     "description": "iFrames for Neos CMS",
     "license": "GPL-3.0-or-later",
-    "keywords": ["flow", "neos", "iframe", "contentelement"],
+    "keywords": [
+        "flow",
+        "neos",
+        "iframe",
+        "contentelement"
+    ],
     "authors": [
         {
             "name": "Jon Uhlmann",
@@ -13,9 +18,11 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.3 || ~4.0 || ~5.0",
-        "carbon/notification": "^1.2",
-        "carbon/includeassets": "^3.5"
+        "neos/neos": "~4.2 || ~5.0",
+        "neos/fusion-afx": "^1.2",
+        "carbon/eel": "^1.7",
+        "carbon/includeassets": "^3.5",
+        "carbon/notification": "^1.2"
     },
     "autoload": {
         "psr-4": {
@@ -23,7 +30,12 @@
         }
     },
     "archive": {
-        "exclude": [".editorconfig", ".github", ".gitattributes", "CODE_OF_CONDUCT.md"]
+        "exclude": [
+            ".editorconfig",
+            ".github",
+            ".gitattributes",
+            "CODE_OF_CONDUCT.md"
+        ]
     },
     "extra": {
         "marketplace-account": "me@jonnitto.ch",

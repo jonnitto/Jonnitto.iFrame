@@ -1,0 +1,9 @@
+Carbon:
+  IncludeAssets:
+    Packages:
+      'Jonnitto.iFrame:ErrorCheck':
+        Package: 'Jonnitto.iFrame'
+        ConditionPrototype: 'Jonnitto.iFrame:Component.ErrorCheck'
+        General:
+          Head:
+            - Main.js[inline]

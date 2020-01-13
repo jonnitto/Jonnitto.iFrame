@@ -1,0 +1,22 @@
+prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Neos:ContentComponent) {
+    // Allow to disable the content element wrapping
+    contentElement = true
+
+    height = ${q(node).property('height')}
+    unit = ${q(node).property('unit')}
+    ratio = ${q(node).property('ratio')}
+    src = ${q(node).property('link')}
+
+    class = null
+    wrapper = ${Configuration.setting('Jonnitto.iFrame.container')}
+    errorCheck = ${!node.context.inBackend}
+    showNotificationIfNoSrc = ${node.context.inBackend}
+
+    renderer = afx`<Jonnitto.iFrame:Component.iFrame {...props} />`
+    renderer.@process.convertUris = Neos.Neos:ConvertUris {
+        forceConversion = true
+    }
+
+    @context.contentElement = ${this.contentElement}
+    @process.contentElementWrapping.@if.contentElementWrapping = ${contentElement}
+}
