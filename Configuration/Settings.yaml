@@ -11,7 +11,7 @@ Neos:
 
 Jonnitto:
   iFrame:
-    container: false
+    container: true
     width: '100%'
     defaultHeight: 400
     defaultStyle: 'background:transparent;border:none;'
