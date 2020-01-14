@@ -9,7 +9,7 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Neos:ContentComponent) {
 
     class = null
     wrapper = ${Configuration.setting('Jonnitto.iFrame.container')}
-    errorCheck = ${!node.context.inBackend}
+    errorCheck = ${!node.context.inBackend && q(node).is('[instanceof Jonnitto.iFrame:Mixin.ErrorCheck]')}
     showNotificationIfNoSrc = ${node.context.inBackend}
 
     renderer = afx`<Jonnitto.iFrame:Component.iFrame {...props} />`
