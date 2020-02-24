@@ -9,6 +9,7 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Neos:ContentComponent) {
     title = ${q(node).property('title')}
 
     class = null
+    loading = ${Configuration.setting('Jonnitto.iFrame.loading')}
     wrapper = ${Configuration.setting('Jonnitto.iFrame.container')}
     errorCheck = ${!node.context.inBackend && q(node).is('[instanceof Jonnitto.iFrame:Mixin.ErrorCheck]')}
     showNotificationIfNoSrc = ${node.context.inBackend}

@@ -9,6 +9,7 @@ prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
     errorCheck = true
     showNotificationIfNoSrc = false
 
+    loading = ${Configuration.setting('Jonnitto.iFrame.loading')}
     wrapper = ${Configuration.setting('Jonnitto.iFrame.container')}
     defaultUnit = ${Configuration.setting('Jonnitto.iFrame.defaultUnit')}
     defaultHeight = ${Configuration.setting('Jonnitto.iFrame.defaultHeight')}
@@ -45,6 +46,7 @@ prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
                             @if.set={props.src}
                             onload={props.errorCheck ? 'jonnittoIframeCheck(this)' : null}
                             title={props.title}
+                            loading={props.loading}
                             allowtransparency='true'
                             style='background:transparent;border:none;position:absolute;top:0;left:0;width:100%;height:100%;'
                             src={props.src}

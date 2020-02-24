@@ -2,6 +2,14 @@ Jonnitto:
   iFrame:
     container: true
     defaultUnit: px
+
+    # The loading value can have following values:
+    # -  lazy   => Signals to the browser that the iframe is a good candidate for lazy loading.
+    # -  eager  => Signals to the browser that the iframe is not a good candidate for lazy loading
+    # -  auto   => The browser will determine on its own whether or not to lazily load the iframe.
+    #              Leaving the loading attribute unset is the same as setting auto
+    loading: null
+
     defaultHeight:
       px: 400px
       vh: 100vh
