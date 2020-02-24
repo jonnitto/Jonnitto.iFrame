@@ -3,6 +3,7 @@ prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
     unit = null
     ratio = null
     src = null
+    title = null
 
     class = null
     errorCheck = true
@@ -43,6 +44,7 @@ prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
                         <iframe
                             @if.set={props.src}
                             onload={props.errorCheck ? 'jonnittoIframeCheck(this)' : null}
+                            title={props.title}
                             allowtransparency='true'
                             style='background:transparent;border:none;position:absolute;top:0;left:0;width:100%;height:100%;'
                             src={props.src}

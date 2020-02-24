@@ -6,6 +6,7 @@ prototype(Jonnitto.iFrame:iFrame) < prototype(Neos.Neos:ContentComponent) {
     unit = ${q(node).property('unit')}
     ratio = ${q(node).property('ratio')}
     src = ${q(node).property('link')}
+    title = ${q(node).property('title')}
 
     class = null
     wrapper = ${Configuration.setting('Jonnitto.iFrame.container')}

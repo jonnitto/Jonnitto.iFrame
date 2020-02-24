@@ -1,6 +1,7 @@
 'Jonnitto.iFrame:iFrame':
   superTypes:
     'Neos.Neos:Content': true
+    'Jonnitto.iFrame:Mixin.Title': true
     'Jonnitto.iFrame:Mixin.Group': true
     'Jonnitto.iFrame:Mixin.Link': true
     'Jonnitto.iFrame:Mixin.Height': true
