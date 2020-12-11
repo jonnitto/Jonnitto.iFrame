@@ -19,7 +19,7 @@
     ],
     "require": {
         "neos/neos": "~4.2 || ~5.0 || ~7.0",
-        "neos/fusion-afx": "^1.2",
+        "neos/fusion-afx": "^1.2 || ^7.0",
         "carbon/eel": "^1.7",
         "carbon/includeassets": "^3.5 || ^4.0 || ^5.0",
         "carbon/notification": "^1.2 || ^2.0"
