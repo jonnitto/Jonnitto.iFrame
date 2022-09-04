@@ -1,11 +1,11 @@
 prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
-    height = null
-    unit = null
-    ratio = null
-    src = null
-    title = null
+    height = ${null}
+    unit = ${null}
+    ratio = ${null}
+    src = ${null}
+    title = ${null}
 
-    class = null
+    class = ${null}
     errorCheck = true
     showNotificationIfNoSrc = false
 
