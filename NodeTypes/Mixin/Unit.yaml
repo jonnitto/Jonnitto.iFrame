@@ -1,4 +1,4 @@
-'Jonnitto.iFrame:Mixin.Unit':
+"Jonnitto.iFrame:Mixin.Unit":
   abstract: true
   properties:
     unit:
@@ -9,7 +9,7 @@
         showInCreationDialog: true
         reloadIfChanged: true
         inspector:
-          hidden: 'ClientEval:node.properties.ratio ? true : false'
+          hidden: "ClientEval: node.properties.ratio"
           group: settings
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           position: 300

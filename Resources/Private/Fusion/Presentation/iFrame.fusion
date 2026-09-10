@@ -1,12 +1,11 @@
 prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
-    height = ${null}
-    unit = ${null}
-    ratio = ${null}
-    src = ${null}
-    title = ${null}
+    height = null
+    unit = null
+    ratio = null
+    src = null
+    title = null
 
-    class = ${null}
-    errorCheck = true
+    class = null
     showNotificationIfNoSrc = false
 
     loading = ${Configuration.setting('Jonnitto.iFrame.loading')}
@@ -16,51 +15,45 @@ prototype(Jonnitto.iFrame:Component.iFrame) < prototype(Neos.Fusion:Component) {
 
     @if.showElement = ${this.src || this.showNotificationIfNoSrc}
 
-    renderer = Neos.Fusion:Component {
-        @apply.props = ${props}
+    attributes = Neos.Fusion:DataStructure
 
-        style = Neos.Fusion:Join {
-            position = 'position:relative;'
-            width = 'width:100%;'
-            height = Neos.Fusion:Case {
-                hasRatio {
-                    condition = ${props.ratio}
-                    renderer = ${'padding-top:' + props.ratio + '%;height:0;'}
-                }
-                hasHeight {
-                    condition = ${props.height}
-                    renderer = ${'height:' + props.height + (props.unit || props.defaultUnit) + ';'}
-                }
-                default {
-                    condition = true
-                    renderer = ${'height:' + props.defaultHeight[props.unit || props.defaultUnit] + ';'}
-                }
-            }
+    @private {
+        class = ${Carbon.String.classNames('jonnitto-iframe', props.class, Type.isString(props.wrapper) ? props.wrapper : null)}
+        heightUnit = ${props.unit || props.defaultUnit}
+        style = Neos.Fusion:DataStructure {
+            @process.toString = ${Carbon.String.styles(value)}
+            position = 'relative'
+            background = 'transparent'
+            border = 'none'
+            width = '100%'
+            aspectRatio = ${props.ratio}
+            aspectRatio.@if.ratio = ${props.ratio}
+            height = ${props.height ? (props.height + private.heightUnit) : (props.defaultHeight[private.heightUnit])}
+            height.@if.noRatio = ${!props.ratio}
         }
-
-        renderer = afx`
-            <Neos.Fusion:Augmenter class={String.trim(Array.join(['jonnitto-iframe', props.class, Type.isString(props.wrapper) ? props.wrapper : null], ' '))}>
-                <Carbon.Eel:Tag tagName={props.wrapper ? 'div' : null}>
-                    <div style={props.style}>
-                        <iframe
-                            @if.set={props.src}
-                            onload={props.errorCheck ? 'jonnittoIframeCheck(this)' : null}
-                            title={props.title}
-                            loading={props.loading}
-                            allowtransparency='true'
-                            style='background:transparent;border:none;position:absolute;top:0;left:0;width:100%;height:100%;'
-                            src={props.src}
-                        >
-                        </iframe>
-                        <Carbon.Notification:Tag
-                            @if.set={props.showNotificationIfNoSrc && !props.src}
-                            type='alert'
-                            attributes.style.position='position:absolute;left:0;right:0;top:0;'
-                            content={Translation.translate('noSrc', 'Please add a internal or external URL in the inspector', [], 'NodeTypes/iFrame', 'Jonnitto.iFrame')}
-                        />
-                    </div>
-                </Carbon.Eel:Tag>
-            </Neos.Fusion:Augmenter>
-        `
     }
+
+     renderer = afx`
+        <Carbon.Eel:Tag
+            tagName={props.wrapper ? 'div' : null}
+            attributes.class={private.class}
+        >
+            <iframe
+                @if.set={props.src}
+                title={props.title}
+                loading={props.loading}
+                allowtransparency="true"
+                style={private.style}
+                src={props.src}
+                {...props.attributes}
+                class={Carbon.String.classNames(props.wrapper ? null : private.class, props.attributes.class)}
+            >
+            </iframe>
+            <Carbon.Notification:Tag
+                @if.set={props.showNotificationIfNoSrc && !props.src}
+                type='alert'
+                content={Translation.translate('noSrc', 'Please add a internal or external URL in the inspector', [], 'NodeTypes/iFrame', 'Jonnitto.iFrame')}
+            />
+        </Carbon.Eel:Tag>
+    `
 }

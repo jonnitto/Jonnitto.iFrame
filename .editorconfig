@@ -15,14 +15,8 @@ indent_style = space
 indent_size = 4
 
 # Exceptions
-[{*.{yaml,yml,sh,jscsrc,scss},package.json,.*rc}]
+[*.yaml]
 indent_size = 2
 
-[*.{json,scss}]
-max_line_length = 1000
-
-[Sites.xml]
-indent_size = 1
-
-[*.{note,md,edit,read}]
+[*.md]
 trim_trailing-whitespace = false

@@ -8,7 +8,7 @@ Jonnitto:
     # -  eager  => Signals to the browser that the iframe is not a good candidate for lazy loading
     # -  auto   => The browser will determine on its own whether or not to lazily load the iframe.
     #              Leaving the loading attribute unset is the same as setting auto
-    loading: null
+    loading: lazy
 
     defaultHeight:
       px: 400px

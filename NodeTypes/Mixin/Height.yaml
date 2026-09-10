@@ -1,4 +1,4 @@
-'Jonnitto.iFrame:Mixin.Height':
+"Jonnitto.iFrame:Mixin.Height":
   abstract: true
   properties:
     height:
@@ -8,10 +8,10 @@
         showInCreationDialog: true
         reloadIfChanged: true
         inspector:
-          hidden: 'ClientEval:node.properties.ratio ? true : false'
+          hidden: "ClientEval: node.properties.ratio"
           group: settings
           position: 200
           editorOptions:
-            placeholder: 'ClientEval:node.properties.unit == "px" ? "400" : "100"'
+            placeholder: 'ClientEval: node.properties.unit == "px" ? "400" : "100"'
       validation:
-        'Neos.Neos/Validation/IntegerValidator': []
+        "Neos.Neos/Validation/IntegerValidator": []

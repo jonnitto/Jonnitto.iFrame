@@ -1,4 +1,4 @@
-'Jonnitto.iFrame:Mixin.Link':
+"Jonnitto.iFrame:Mixin.Link":
   abstract: true
   properties:
     link:
@@ -8,6 +8,6 @@
         showInCreationDialog: true
         reloadIfChanged: true
         inspector:
-          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editor: "Neos.Neos/Inspector/Editors/LinkEditor"
           group: settings
           position: 100

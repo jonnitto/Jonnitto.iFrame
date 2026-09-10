@@ -1,4 +1,4 @@
-'Jonnitto.iFrame:Mixin.Title':
+"Jonnitto.iFrame:Mixin.Title":
   abstract: true
   properties:
     title:
@@ -11,4 +11,4 @@
           group: settings
           position: 110
     validation:
-      'Neos.Neos/Validation/LabelValidator': []
+      "Neos.Neos/Validation/LabelValidator": []

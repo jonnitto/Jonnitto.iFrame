@@ -1,4 +1,4 @@
-'Jonnitto.iFrame:Mixin.Group':
+"Jonnitto.iFrame:Mixin.Group":
   abstract: true
   ui:
     inspector:

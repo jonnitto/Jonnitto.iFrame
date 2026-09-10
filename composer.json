@@ -18,29 +18,13 @@
         }
     ],
     "require": {
-        "neos/neos": "^5.3 || ^7.0 || ^8.0",
-        "neos/fusion-afx": "^1.2 || ^7.0 || ^8.0",
-        "carbon/eel": "^1.7 || ^2.0",
-        "carbon/includeassets": "^3.5 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
-        "carbon/notification": "^1.2 || ^2.0"
+        "neos/neos": "^8.4 || ^9.0",
+        "carbon/eel": "^2.28",
+        "carbon/notification": "^2.4 || ^3.0"
     },
     "autoload": {
         "psr-4": {
             "Jonnitto\\iFrame\\": "Classes"
-        }
-    },
-    "archive": {
-        "exclude": [
-            ".editorconfig",
-            ".github",
-            ".gitattributes",
-            "CODE_OF_CONDUCT.md"
-        ]
-    },
-    "extra": {
-        "installer-name": "Jonnitto.iFrame",
-        "neos": {
-            "package-key": "Jonnitto.iFrame"
         }
     }
 }
